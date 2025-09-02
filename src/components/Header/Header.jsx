@@ -105,7 +105,7 @@ const Header = () => {
                     <div className={styles.mainHeaderContent}>
                         <a href="/" className={styles.logo}>
                             <img
-                                src="/public/images/logo-cnc-nuevo.jpg"
+                                src="https://raw.githubusercontent.com/Nefta11/OSDEMS-CNC/refs/heads/main/public/images/logo-cnc-nuevo.jpg"
                                 alt="OSDEMS CNC"
                                 className={styles.logoImage}
                             />
