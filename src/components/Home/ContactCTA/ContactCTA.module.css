@@ -1,0 +1,505 @@
+/* Testimonials Section */
+.testimonials {
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+  color: white;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(1, 108, 107, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(32, 185, 219, 0.1) 0%, transparent 50%);
+  animation: testimonialBg 15s ease-in-out infinite;
+}
+
+@keyframes testimonialBg {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.testimonialContent {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.testimonialTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #016c6b, #20b9db, #016c6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 20px rgba(1, 108, 107, 0.5));
+  }
+  to {
+    filter: drop-shadow(0 0 30px rgba(32, 185, 219, 0.8));
+  }
+}
+
+.testimonialCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 50px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.testimonialCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  animation: cardShimmer 4s ease-in-out infinite;
+}
+
+@keyframes cardShimmer {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.quoteIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 30px;
+  background: linear-gradient(135deg, #016c6b, #20b9db);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 15px 35px rgba(1, 108, 107, 0.3);
+}
+
+.testimonialQuote {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.authorAvatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #20b9db, #016c6b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+  box-shadow: 0 8px 25px rgba(32, 185, 219, 0.3);
+}
+
+.authorInfo {
+  text-align: left;
+}
+
+.authorInfo cite {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #016c6b;
+  font-style: normal;
+  margin-bottom: 5px;
+}
+
+.authorInfo span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+/* Contact CTA Section */
+.contactCta {
+  background: linear-gradient(135deg, #016c6b 0%, #20b9db 100%);
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dotMatrix {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+  background-size: 60px 60px;
+  animation: dotMove 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes dotMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(60px, 60px) rotate(360deg);
+  }
+}
+
+.contactContent {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.ctaIcon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: iconFloat 3s ease-in-out infinite;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+.contactTitle {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: scale(0.8) translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contactTitle.animate {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.contactDescription {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+}
+
+.typewriter {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  color: #20b9db;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.contactActions {
+  margin-top: 50px;
+}
+
+.contactButton {
+  background: white;
+  color: #016c6b;
+  padding: 20px 50px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+.contactButton.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.contactButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  transition: width 0.4s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.contactButton:hover::before {
+  width: 100%;
+}
+
+.contactButton:hover {
+  color: white;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.contactButton svg {
+  transition: transform 0.3s ease;
+  fill: currentColor;
+}
+
+.contactButton:hover svg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .testimonials {
+    padding: 80px 0;
+  }
+
+  .contactCta {
+    padding: 100px 0;
+  }
+
+  .testimonialTitle {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+
+  .testimonialCard {
+    padding: 40px 30px;
+  }
+
+  .testimonialQuote {
+    font-size: 1.2rem;
+  }
+
+  .contactTitle {
+    font-size: 3rem;
+  }
+
+  .typewriter {
+    font-size: 1.8rem;
+  }
+
+  .contactButton {
+    padding: 18px 45px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 60px 0;
+  }
+
+  .contactCta {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .testimonialTitle {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .testimonialCard {
+    padding: 30px 25px;
+  }
+
+  .testimonialQuote {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .testimonialAuthor {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .authorInfo {
+    text-align: center;
+  }
+
+  .ctaIcon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+  }
+
+  .contactTitle {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+
+  .typewriter {
+    font-size: 1.5rem;
+  }
+
+  .contactButton {
+    width: 100%;
+    max-width: 350px;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 50px 0;
+  }
+
+  .contactCta {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .testimonialTitle {
+    font-size: 1.8rem;
+  }
+
+  .testimonialCard {
+    padding: 25px 20px;
+  }
+
+  .quoteIcon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 25px;
+  }
+
+  .testimonialQuote {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .authorAvatar {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .authorInfo cite {
+    font-size: 1.2rem;
+  }
+
+  .ctaIcon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+  }
+
+  .contactTitle {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .typewriter {
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .contactButton {
+    padding: 14px 35px;
+    font-size: 1rem;
+    gap: 10px;
+  }
+
+  .dotMatrix {
+    background-size: 40px 40px;
+  }
+}

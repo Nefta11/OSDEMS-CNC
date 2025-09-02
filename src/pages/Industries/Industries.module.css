@@ -1,0 +1,492 @@
+/* Industries Page Styles */
+.industries {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #009393 0%, #007575 100%);
+    color: white;
+    padding: 8rem 0 4rem;
+    margin-top: 80px;
+    /* Compensar header fijo */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+}
+
+.heroTitle {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin: 0;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Industry Sections */
+.industrySection {
+    padding: 4rem 0;
+    background-color: #f2ede2;
+}
+
+.industrySection:nth-child(even) {
+    background-color: white;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    min-height: 500px;
+}
+
+.imageColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.spacer {
+    height: 2rem;
+}
+
+.imageWrapper {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover {
+    transform: scale(1.05);
+}
+
+.industrieImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Industry Images - Real Images */
+.industryImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .industryImage {
+    transform: scale(1.05);
+}
+
+.placeholderImage {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #009393 0%, #007575 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.placeholderText {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #009393;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sectionContent {
+    animation: fadeIn 1s ease-out 0.2s both;
+}
+
+.sectionContent p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.sectionContent p:last-child {
+    margin-bottom: 0;
+}
+
+.sectionContent strong {
+    color: #009393;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Automation Section */
+.automationSection {
+    background: linear-gradient(135deg, rgba(0, 147, 147, 0.05) 0%, rgba(0, 147, 147, 0.1) 100%);
+    padding: 5rem 0;
+    position: relative;
+}
+
+.automationSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/pattern-overlay.png') repeat;
+    opacity: 0.03;
+    z-index: 1;
+}
+
+.automationGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.automationContent {
+    padding: 2rem;
+}
+
+.automationTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #009393;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #009393, #007575);
+    margin-bottom: 2rem;
+    border-radius: 2px;
+    animation: expandWidth 0.8s ease-out 0.3s both;
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 80px;
+    }
+}
+
+.automationText {
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.automationText p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.automationText strong {
+    color: #009393;
+    font-weight: 600;
+}
+
+.automationImage {
+    position: relative;
+}
+
+.automationImage .industrieImage {
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.conclusion {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 1s ease-out 0.7s both;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.conclusionTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #009393;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.conclusionText {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contentGrid {
+        gap: 2rem;
+    }
+
+    .automationGrid {
+        gap: 3rem;
+    }
+
+    .heroTitle {
+        font-size: 3rem;
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+    }
+
+    .automationTitle {
+        font-size: 2rem;
+    }
+
+    .placeholderImage {
+        height: 250px;
+    }
+
+    .placeholderText {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+
+    .industrySection {
+        padding: 3rem 0;
+    }
+
+    .contentGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .automationSection {
+        padding: 4rem 0;
+    }
+
+    .automationGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contentColumn {
+        padding: 1rem;
+    }
+
+    .automationContent {
+        padding: 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.75rem;
+    }
+
+    .automationTitle {
+        font-size: 1.75rem;
+    }
+
+    .sectionContent p,
+    .automationText p {
+        font-size: 1rem;
+    }
+
+    .placeholderImage {
+        height: 200px;
+    }
+
+    .placeholderText {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 4rem 0 2rem;
+    }
+
+    .heroTitle {
+        font-size: 2rem;
+        letter-spacing: -1px;
+    }
+
+    .industrySection {
+        padding: 2rem 0;
+    }
+
+    .automationSection {
+        padding: 3rem 0;
+    }
+
+    .contentGrid {
+        gap: 1.5rem;
+    }
+
+    .automationGrid {
+        gap: 1.5rem;
+    }
+
+    .contentColumn {
+        padding: 0.5rem;
+    }
+
+    .automationContent {
+        padding: 0.5rem;
+    }
+
+    .spacer {
+        height: 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+
+    .automationTitle {
+        font-size: 1.5rem;
+    }
+
+    .conclusion {
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
+    .conclusionTitle {
+        font-size: 1.25rem;
+    }
+
+    .placeholderImage {
+        height: 150px;
+    }
+
+    .placeholderText {
+        font-size: 0.875rem;
+    }
+}
+
+/* Animation utilities */
+.fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.fadeInDown {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hover effects */
+.imageWrapper:hover .industrieImage {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.conclusion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}

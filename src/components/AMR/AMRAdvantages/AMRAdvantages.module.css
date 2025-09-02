@@ -1,0 +1,346 @@
+/* AMR Advantages Section */
+.advantagesSection {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 50%, #f7fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.advantagesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(1, 108, 107, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(32, 185, 219, 0.03) 0%, transparent 50%);
+}
+
+.container {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #333;
+  line-height: 1.2;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #016c6b, #20b9db);
+  border-radius: 2px;
+}
+
+.sectionDescription {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.sectionDescription strong {
+  color: #016c6b;
+  font-weight: 700;
+}
+
+.advantagesSubtitle {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: #016c6b;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.advantagesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+  align-items: stretch;
+}
+
+.advantageCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.advantageCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: var(--delay, 0s);
+}
+
+.advantageCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(1, 108, 107, 0.05), rgba(32, 185, 219, 0.03));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 20px;
+}
+
+.advantageCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+.advantageCard:hover::before {
+  opacity: 1;
+}
+
+.advantageIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #016c6b, #20b9db);
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(1, 108, 107, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.advantageCard:hover .advantageIcon {
+  transform: scale(1.1) rotateY(360deg);
+  box-shadow: 0 15px 35px rgba(1, 108, 107, 0.4);
+}
+
+.advantageIcon svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+
+.advantageTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+.advantageList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.advantageList li {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.advantageList li::before {
+  content: '*';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #20b9db;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.advantageCard:hover .advantageList li {
+  color: #555;
+}
+
+.advantageList li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .advantagesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .advantagesSection {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .advantagesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .advantagesSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .advantagesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .advantageCard {
+    padding: 30px 25px;
+    border-radius: 15px;
+  }
+
+  .advantageIcon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .advantageIcon svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .advantageTitle {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .advantageList li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding-left: 18px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 50px;
+  }
+
+  .sectionDescription {
+    text-align: left;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .advantagesSection {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 0.8rem;
+  }
+
+  .advantagesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .advantageCard {
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  .advantageIcon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .advantageIcon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .advantageTitle {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .advantageList li {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    line-height: 1.5;
+  }
+
+  .advantageList li::before {
+    font-size: 1rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+
+  .sectionDescription {
+    line-height: 1.6;
+  }
+
+  .advantagesSubtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+  }
+}

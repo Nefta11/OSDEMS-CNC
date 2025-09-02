@@ -1,0 +1,220 @@
+/* AMR Hero Section */
+.heroSection {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+/* Enhanced Particle Background */
+.particleBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 236, 33, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(28, 144, 216, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(32, 185, 219, 0.15) 0%, transparent 50%);
+  animation: particleFloat 20s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    background-position: 0% 50%, 100% 20%, 40% 80%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 80%, 60% 20%;
+  }
+}
+
+/* Geometric Shapes */
+.geometricShapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.shape1, .shape2, .shape3 {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  animation: float 15s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+.shape1 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  background: rgba(1, 108, 107, 0.03);
+}
+
+.shape2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 5s;
+  transform: rotate(45deg);
+  background: rgba(32, 185, 219, 0.03);
+}
+
+.shape3 {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  top: 15%;
+  right: 25%;
+  animation-delay: 10s;
+  background: rgba(32, 185, 219, 0.03);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-30px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(15px) rotate(240deg);
+  }
+}
+
+.heroSubtitle {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: fadeInWords 1s ease-out 0.3s both;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+  font-family: 'Times New Roman', Times, serif;
+  animation: fadeInWords 1s ease-out 0.5s both;
+  padding: 20px 0;
+}
+
+@keyframes fadeInWords {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroSection {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 15px 30px;
+  }
+
+  .heroContent {
+    padding: 0 15px;
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .heroSubtitle {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .geometricShapes {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 80px 10px 25px;
+  }
+
+  .heroContent {
+    padding: 0 10px;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    padding: 15px 0;
+  }
+
+  .heroSubtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    letter-spacing: 1px;
+  }
+
+  .geometricShapes {
+    opacity: 0.2;
+  }
+}

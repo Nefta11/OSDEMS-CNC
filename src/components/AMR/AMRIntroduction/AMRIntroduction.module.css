@@ -1,0 +1,197 @@
+/* AMR Introduction Section */
+.introSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.introText {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.8;
+  color: #555;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+
+.introText.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.introText p {
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.introText p:last-child {
+  margin-bottom: 0;
+}
+
+.introText strong {
+  color: #016c6b;
+  font-weight: 700;
+}
+
+/* Background Elements */
+.backgroundElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.element1 {
+  position: absolute;
+  top: 20%;
+  right: -200px;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(1, 108, 107, 0.05), rgba(32, 185, 219, 0.05));
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.element2 {
+  position: absolute;
+  bottom: 10%;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, rgba(32, 185, 219, 0.08), rgba(1, 108, 107, 0.03));
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .introSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .element1 {
+    width: 300px;
+    height: 300px;
+    right: -150px;
+  }
+
+  .element2 {
+    width: 250px;
+    height: 250px;
+    left: -100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .introSection {
+    padding: 50px 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .sectionTitle {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .introText {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+  }
+
+  .introText p {
+    margin-bottom: 25px;
+    text-align: left;
+  }
+
+  .element1,
+  .element2 {
+    opacity: 0.3;
+  }
+
+  .element1 {
+    width: 200px;
+    height: 200px;
+    right: -100px;
+  }
+
+  .element2 {
+    width: 180px;
+    height: 180px;
+    left: -80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .introSection {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 0.8rem;
+  }
+
+  .sectionTitle {
+    margin-bottom: 30px;
+    line-height: 1.3;
+  }
+
+  .introText {
+    line-height: 1.6;
+  }
+
+  .introText p {
+    margin-bottom: 20px;
+  }
+
+  .element1,
+  .element2 {
+    display: none;
+  }
+}
