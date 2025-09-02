@@ -152,7 +152,7 @@ const Header = () => {
             {/* Menú móvil */}
             <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
                 <div className={styles.mobileMenuHeader}>
-                    <img src="/public/images/logo-cnc-nuevo.jpg" alt="OSDEMS CNC" className={styles.mobileMenuLogo} />
+                    <img src="https://raw.githubusercontent.com/Nefta11/OSDEMS-CNC/refs/heads/main/public/images/logo-cnc-nuevo.jpg" alt="OSDEMS CNC" className={styles.mobileMenuLogo} />
                     <button 
                         className={styles.mobileMenuClose}
                         onClick={closeMobileMenu}
